@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Marvel's World – Explore the legendary Marvel Universe, iconic characters, blockbuster films, and the enduring legacy of Earth's mightiest heroes." />
+  <title>Marvel's World — The Ultimate Marvel Universe Experience</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div id="preloader"><div class="loader"></div></div>
+
+  <!-- PARTICLES -->
+  <canvas id="particles-bg"></canvas>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="nav-logo">MARVEL'S WORLD</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#characters">Characters</a></li>
+      <li><a href="#movies">Movies & Series</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <span class="hero-badge">EST. 1939 &bull; TIMELESS LEGACY</span>
+      <h1>Welcome to <span class="highlight">Marvel's World</span></h1>
+      <p class="hero-desc" data-text="Step into the extraordinary realm where heroes rise, legends are forged, and the boundaries of imagination are shattered. Experience the unparalleled saga of the Marvel Universe.">Step into the extraordinary realm where heroes rise, legends are forged, and the boundaries of imagination are shattered. Experience the unparalleled saga of the Marvel Universe.</p>
+      <div class="hero-btns">
+        <a href="#characters" class="btn btn-primary"><i class="fas fa-mask"></i> Explore Heroes</a>
+        <a href="#movies" class="btn btn-outline"><i class="fas fa-film"></i> View Films</a>
+      </div>
+    </div>
+    <div class="hero-scroll"><span></span></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Our Legacy</p>
+        <h2 class="section-title">The <span class="highlight">Marvel</span> Saga</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-stats">
+            <div class="stat-box">
+              <div class="num"><span class="counter" data-target="85" data-suffix="+">0</span></div>
+              <div class="label">Years of Legacy</div>
+            </div>
+            <div class="stat-box">
+              <div class="num"><span class="counter" data-target="8000" data-suffix="+">0</span></div>
+              <div class="label">Characters Created</div>
+            </div>
+            <div class="stat-box">
+              <div class="num"><span class="counter" data-target="33" data-suffix="">0</span></div>
+              <div class="label">MCU Films</div>
+            </div>
+            <div class="stat-box">
+              <div class="num"><span class="counter" data-target="30" data-suffix="B+">0</span></div>
+              <div class="label">Box Office Revenue</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <h3>A Universe Beyond Imagination</h3>
+          <p>Marvel Entertainment, originally founded as Timely Comics in 1939 by Martin Goodman, has evolved into one of the most influential entertainment conglomerates in global history. From its humble beginnings in the Golden Age of comics, Marvel introduced the world to flawed, relatable heroes who transcended the boundaries of fiction.</p>
+          <p>Under the visionary leadership of Stan Lee, Jack Kirby, and Steve Ditko, Marvel revolutionized storytelling by imbuing its characters with genuine human struggles, moral complexities, and emotional depth. Today, the Marvel Cinematic Universe stands as the highest-grossing film franchise of all time, a testament to the enduring power of heroic narratives.</p>
+          <div class="about-tags">
+            <span><i class="fas fa-star"></i> Comics</span>
+            <span><i class="fas fa-film"></i> Films</span>
+            <span><i class="fas fa-tv"></i> Series</span>
+            <span><i class="fas fa-gamepad"></i> Gaming</span>
+            <span><i class="fas fa-globe"></i> Global Impact</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHARACTERS -->
+  <section id="characters">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Iconic Heroes & Villains</p>
+        <h2 class="section-title">Marvel <span class="highlight">Characters</span></h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="char-tabs reveal">
+        <button class="char-tab active" data-filter="all">All Heroes</button>
+        <button class="char-tab" data-filter="avengers">Avengers</button>
+        <button class="char-tab" data-filter="xmen">X-Men</button>
+        <button class="char-tab" data-filter="guardians">Guardians</button>
+        <button class="char-tab" data-filter="villains">Villains</button>
+      </div>
+
+      <div class="char-grid">
+        <!-- Iron Man -->
+        <div class="char-card reveal" data-team="avengers">
+          <span class="char-team">Avengers</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#b71c1c,#ff6f00,#fdd835);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">🛡️</span>
+          </div>
+          <div class="char-info">
+            <h3>Iron Man</h3>
+            <p class="char-alias">Tony Stark</p>
+            <p>Genius billionaire inventor who built an advanced powered-armor suit, becoming one of the most formidable heroes in the Marvel Universe and a founding Avenger.</p>
+          </div>
+        </div>
+        <!-- Captain America -->
+        <div class="char-card reveal" data-team="avengers">
+          <span class="char-team">Avengers</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#0d47a1,#e53935,#e8eaf6);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">⭐</span>
+          </div>
+          <div class="char-info">
+            <h3>Captain America</h3>
+            <p class="char-alias">Steve Rogers</p>
+            <p>The quintessential super-soldier and moral compass of the Avengers, embodying courage, honor, and unwavering dedication to justice since World War II.</p>
+          </div>
+        </div>
+        <!-- Thor -->
+        <div class="char-card reveal" data-team="avengers">
+          <span class="char-team">Avengers</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#1a237e,#7c4dff,#b388ff);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">⚡</span>
+          </div>
+          <div class="char-info">
+            <h3>Thor</h3>
+            <p class="char-alias">God of Thunder</p>
+            <p>The Asgardian prince wielding the mighty Mjolnir, commanding the powers of thunder and lightning while defending both Asgard and Midgard from cosmic threats.</p>
+          </div>
+        </div>
+        <!-- Black Widow -->
+        <div class="char-card reveal" data-team="avengers">
+          <span class="char-team">Avengers</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#1b1b2f,#b71c1c,#4a0000);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">🕷️</span>
+          </div>
+          <div class="char-info">
+            <h3>Black Widow</h3>
+            <p class="char-alias">Natasha Romanoff</p>
+            <p>A world-class spy and master martial artist, former KGB operative turned S.H.I.E.L.D. agent, whose unparalleled skills make her indispensable to the Avengers.</p>
+          </div>
+        </div>
+        <!-- Wolverine -->
+        <div class="char-card reveal" data-team="xmen">
+          <span class="char-team">X-Men</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#f57f17,#4e342e,#212121);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">🐺</span>
+          </div>
+          <div class="char-info">
+            <h3>Wolverine</h3>
+            <p class="char-alias">James "Logan" Howlett</p>
+            <p>The adamantium-clawed mutant with an extraordinary healing factor, Wolverine stands as one of the most iconic and enduring members of the X-Men.</p>
+          </div>
+        </div>
+        <!-- Storm -->
+        <div class="char-card reveal" data-team="xmen">
+          <span class="char-team">X-Men</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#e0e0e0,#4fc3f7,#0277bd);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">🌩️</span>
+          </div>
+          <div class="char-info">
+            <h3>Storm</h3>
+            <p class="char-alias">Ororo Munroe</p>
+            <p>A regal mutant with the power to manipulate weather, Storm has led the X-Men with wisdom and strength, earning her place as one of Marvel's greatest heroines.</p>
+          </div>
+        </div>
+        <!-- Star-Lord -->
+        <div class="char-card reveal" data-team="guardians">
+          <span class="char-team">Guardians</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#4a148c,#e91e63,#ff6f00);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">🚀</span>
+          </div>
+          <div class="char-info">
+            <h3>Star-Lord</h3>
+            <p class="char-alias">Peter Quill</p>
+            <p>The charismatic half-human, half-Celestial leader of the Guardians of the Galaxy, known for his wit, bravery, and legendary mixtapes across the cosmos.</p>
+          </div>
+        </div>
+        <!-- Thanos -->
+        <div class="char-card reveal" data-team="villains">
+          <span class="char-team">Villain</span>
+          <div class="char-img">
+            <div class="char-img-bg" style="background:linear-gradient(135deg,#4a148c,#6a1b9a,#ce93d8);"></div>
+            <span class="char-icon" style="position:relative;z-index:1;">💎</span>
+          </div>
+          <div class="char-info">
+            <h3>Thanos</h3>
+            <p class="char-alias">The Mad Titan</p>
+            <p>The most formidable villain in the Marvel Universe, whose quest for the Infinity Stones brought the mightiest heroes to their knees and reshaped reality itself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVIES & SERIES -->
+  <section id="movies">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Cinematic Universe</p>
+        <h2 class="section-title">Movies & <span class="highlight">Series</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="movies-grid">
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#b71c1c,#ff6f00,#fdd835);"></div>
+            <span class="movie-year">2008</span>
+            <span class="movie-type">Film</span>
+          </div>
+          <div class="movie-info">
+            <h3>Iron Man</h3>
+            <p>The groundbreaking film that launched the Marvel Cinematic Universe, introducing Tony Stark's transformation from weapons manufacturer to armored superhero.</p>
+            <div class="movie-rating"><span class="stars">★★★★★</span><span>9.1/10</span></div>
+          </div>
+        </div>
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#0d47a1,#42a5f5,#e8eaf6);"></div>
+            <span class="movie-year">2012</span>
+            <span class="movie-type">Film</span>
+          </div>
+          <div class="movie-info">
+            <h3>The Avengers</h3>
+            <p>Earth's mightiest heroes assemble for the first time to combat Loki's invasion, establishing the unprecedented cinematic crossover event that redefined blockbuster filmmaking.</p>
+            <div class="movie-rating"><span class="stars">★★★★★</span><span>9.3/10</span></div>
+          </div>
+        </div>
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#1b5e20,#4caf50,#a5d6a7);"></div>
+            <span class="movie-year">2014</span>
+            <span class="movie-type">Film</span>
+          </div>
+          <div class="movie-info">
+            <h3>Guardians of the Galaxy</h3>
+            <p>A ragtag group of intergalactic misfits unite to protect a powerful orb, delivering Marvel's most audacious and critically acclaimed cosmic adventure.</p>
+            <div class="movie-rating"><span class="stars">★★★★★</span><span>9.0/10</span></div>
+          </div>
+        </div>
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#4a148c,#7b1fa2,#e040fb);"></div>
+            <span class="movie-year">2018</span>
+            <span class="movie-type">Film</span>
+          </div>
+          <div class="movie-info">
+            <h3>Avengers: Infinity War</h3>
+            <p>The Avengers and their allies confront the indomitable Thanos in a universe-spanning battle of unprecedented scale, culminating in one of cinema's most shocking conclusions.</p>
+            <div class="movie-rating"><span class="stars">★★★★★</span><span>9.5/10</span></div>
+          </div>
+        </div>
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#1a237e,#283593,#7986cb);"></div>
+            <span class="movie-year">2019</span>
+            <span class="movie-type">Film</span>
+          </div>
+          <div class="movie-info">
+            <h3>Avengers: Endgame</h3>
+            <p>The epic culmination of the Infinity Saga, wherein the remaining Avengers undertake a daring time-heist mission to reverse Thanos's devastating snap and restore the universe.</p>
+            <div class="movie-rating"><span class="stars">★★★★★</span><span>9.7/10</span></div>
+          </div>
+        </div>
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#880e4f,#ad1457,#f48fb1);"></div>
+            <span class="movie-year">2021</span>
+            <span class="movie-type">Series</span>
+          </div>
+          <div class="movie-info">
+            <h3>WandaVision</h3>
+            <p>A groundbreaking Disney+ series blending classic television homage with Marvel's signature storytelling, exploring Wanda Maximoff's grief through surreal suburban sitcom realities.</p>
+            <div class="movie-rating"><span class="stars">★★★★☆</span><span>8.8/10</span></div>
+          </div>
+        </div>
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#004d40,#00897b,#80cbc4);"></div>
+            <span class="movie-year">2021</span>
+            <span class="movie-type">Series</span>
+          </div>
+          <div class="movie-info">
+            <h3>Loki</h3>
+            <p>The God of Mischief navigates the complexities of the Time Variance Authority, unraveling multiversal mysteries that reshape the foundations of the MCU's future narrative.</p>
+            <div class="movie-rating"><span class="stars">★★★★★</span><span>9.2/10</span></div>
+          </div>
+        </div>
+        <div class="movie-card reveal">
+          <div class="movie-poster">
+            <div class="movie-poster-bg" style="background:linear-gradient(135deg,#212121,#e53935,#ff8a80);"></div>
+            <span class="movie-year">2024</span>
+            <span class="movie-type">Film</span>
+          </div>
+          <div class="movie-info">
+            <h3>Deadpool & Wolverine</h3>
+            <p>The Merc with a Mouth teams up with the adamantium-clawed mutant in a riotous, multiversal adventure that bridges the X-Men legacy with the Marvel Cinematic Universe.</p>
+            <div class="movie-rating"><span class="stars">★★★★★</span><span>9.0/10</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Visual Showcase</p>
+        <h2 class="section-title">Marvel <span class="highlight">Gallery</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#e53935,#ff6f00,#fdd835,#1565c0);"></div>
+          <div class="gallery-overlay"><span>The Avengers Assembled</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#0d47a1,#1565c0,#42a5f5);"></div>
+          <div class="gallery-overlay"><span>Captain America: The Shield</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#b71c1c,#d32f2f,#ff8a80);"></div>
+          <div class="gallery-overlay"><span>Scarlet Witch: Power Unleashed</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#1b5e20,#388e3c,#66bb6a);"></div>
+          <div class="gallery-overlay"><span>Hulk: The Incredible</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#4a148c,#7b1fa2,#ce93d8,#f3e5f5);"></div>
+          <div class="gallery-overlay"><span>Infinity Gauntlet: The Stones</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#ff6f00,#f57c00,#ffb74d);"></div>
+          <div class="gallery-overlay"><span>Doctor Strange: Mystic Arts</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#212121,#424242,#757575);"></div>
+          <div class="gallery-overlay"><span>Black Panther: Wakanda</span></div>
+        </div>
+        <div class="gallery-item">
+          <div class="gallery-item-bg" style="background:linear-gradient(135deg,#1a237e,#7c4dff,#b388ff);"></div>
+          <div class="gallery-overlay"><span>Thor: Asgardian Realm</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Contact & <span class="highlight">Feedback</span></h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <h3>We'd Love to Hear From You</h3>
+          <p>Whether you have feedback, suggestions, or simply wish to connect with fellow Marvel enthusiasts, we welcome your correspondence. Our team is dedicated to fostering a vibrant community of Marvel admirers worldwide.</p>
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div class="contact-detail-text">
+              <p class="cd-label">Email Address</p>
+              <p class="cd-value">contact@marvelsworld.com</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="contact-detail-text">
+              <p class="cd-label">Headquarters</p>
+              <p class="cd-value">New York City, NY 10001</p>
+            </div>
+          </div>
+          <div class="contact-detail">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div class="contact-detail-text">
+              <p class="cd-label">Telephone</p>
+              <p class="cd-value">+1 (800) MARVEL-0</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="fullName" placeholder=" " required />
+            <label for="fullName">Full Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="emailAddr" placeholder=" " required />
+            <label for="emailAddr">Email Address</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" placeholder=" " required />
+            <label for="subject">Subject</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">Your Message</label>
+          </div>
+          <button type="submit" class="btn-submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="nav-logo">MARVEL'S WORLD</a>
+        <p>An immersive digital tribute to the enduring legacy of Marvel Entertainment — celebrating over eight decades of heroism, innovation, and unparalleled storytelling that has captivated audiences across the globe.</p>
+      </div>
+      <div>
+        <h4>EXPLORE</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Marvel</a></li>
+          <li><a href="#characters">Characters</a></li>
+          <li><a href="#movies">Movies & Series</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>UNIVERSE</h4>
+        <ul>
+          <li><a href="#characters">Avengers</a></li>
+          <li><a href="#characters">X-Men</a></li>
+          <li><a href="#characters">Guardians</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>CONNECT</h4>
+        <ul>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">Feedback</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Community</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Marvel's World. A fan-made tribute. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-link" aria-label="Discord"><i class="fab fa-discord"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div id="chatbot-toggle" aria-label="Open chatbot">
+    <i class="fas fa-robot"></i>
+    <span class="chat-notif">1</span>
+  </div>
+  <div id="chatbot" class="chatbot-closed">
+    <div class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-avatar"><i class="fas fa-robot"></i></div>
+        <div>
+          <h4>J.A.R.V.I.S.</h4>
+          <span class="chat-status"><span class="status-dot"></span> Online — Marvel AI Assistant</span>
+        </div>
+      </div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">
+        <div class="msg-avatar"><i class="fas fa-robot"></i></div>
+        <div class="msg-bubble">
+          <p>Greetings! I am <strong>J.A.R.V.I.S.</strong>, your Marvel Universe assistant. How may I assist you today?</p>
+          <span class="msg-time">Just now</span>
+        </div>
+      </div>
+    </div>
+    <div class="chat-quick-actions" id="quickActions">
+      <button class="quick-btn" data-msg="Tell me about the Avengers">🦸 Avengers</button>
+      <button class="quick-btn" data-msg="Who is the strongest Marvel character?">💪 Strongest Hero</button>
+      <button class="quick-btn" data-msg="What Marvel movies should I watch first?">🎬 Movie Guide</button>
+      <button class="quick-btn" data-msg="Tell me about the Infinity Stones">💎 Infinity Stones</button>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chatInput" placeholder="Ask about Marvel..." autocomplete="off" />
+      <button id="chatSend" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- BACK TO TOP -->
+  <button id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>

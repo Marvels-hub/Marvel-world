@@ -214,7 +214,134 @@ galleryItems.forEach(item => {
   });
 });
 
-// ===== TYPING EFFECT FOR HERO =====
+
+// ===== CHATBOT =====
+const chatToggle = document.getElementById('chatbot-toggle');
+const chatbot = document.getElementById('chatbot');
+const chatClose = document.getElementById('chatClose');
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const quickActions = document.getElementById('quickActions');
+
+let chatHistory = [];
+let isBotTyping = false;
+
+// Toggle open/close
+chatToggle.addEventListener('click', () => {
+  chatbot.classList.toggle('chatbot-open');
+  chatbot.classList.toggle('chatbot-closed');
+  // Hide notification badge when opened
+  const notif = chatToggle.querySelector('.chat-notif');
+  if (notif) notif.style.display = 'none';
+});
+
+chatClose.addEventListener('click', () => {
+  chatbot.classList.replace('chatbot-open', 'chatbot-closed');
+});
+
+// Quick action buttons
+document.querySelectorAll('.quick-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const msg = btn.getAttribute('data-msg');
+    if (msg && !isBotTyping) sendMessage(msg);
+  });
+});
+
+// Send on button click or Enter
+chatSend.addEventListener('click', () => {
+  const text = chatInput.value.trim();
+  if (text && !isBotTyping) sendMessage(text);
+});
+
+chatInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    const text = chatInput.value.trim();
+    if (text && !isBotTyping) sendMessage(text);
+  }
+});
+
+function getTime() {
+  return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+function appendMessage(role, text) {
+  const isUser = role === 'user';
+  const div = document.createElement('div');
+  div.className = `chat-msg ${isUser ? 'user' : 'bot'}`;
+  div.innerHTML = `
+    <div class="msg-avatar"><i class="fas fa-${isUser ? 'user' : 'robot'}"></i></div>
+    <div class="msg-bubble">
+      <p>${text.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
+      <span class="msg-time">${getTime()}</span>
+    </div>`;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'chat-msg bot chat-typing';
+  div.id = 'typingIndicator';
+  div.innerHTML = `
+    <div class="msg-avatar"><i class="fas fa-robot"></i></div>
+    <div class="typing-dots"><span></span><span></span><span></span></div>`;
+  chatMessages.appendChild(div);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function removeTyping() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+async function sendMessage(text) {
+  chatInput.value = '';
+  appendMessage('user', text);
+  chatHistory.push({ role: 'user', content: text });
+
+  // Hide quick actions after first use
+  if (quickActions) quickActions.style.display = 'none';
+
+  isBotTyping = true;
+  chatSend.disabled = true;
+  showTyping();
+
+  try {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 1000,
+        system: `You are J.A.R.V.I.S., Tony Stark's AI assistant, now serving as the official Marvel Universe guide on this Marvel fan website. You are knowledgeable, witty, and slightly formal — like a very well-read assistant with Stark's dry humor. 
+        
+Respond to questions about Marvel characters, movies, comics, storylines, powers, history, and the MCU. Keep answers concise (2-4 sentences usually), engaging, and in-character. Use bold (**text**) for character/movie names. Occasionally reference Tony Stark or the Avengers in your responses. If asked something non-Marvel, gently steer back to Marvel topics.`,
+        messages: chatHistory
+      })
+    });
+
+    const data = await response.json();
+    removeTyping();
+
+    if (data.content && data.content[0]) {
+      const reply = data.content[0].text;
+      chatHistory.push({ role: 'assistant', content: reply });
+      appendMessage('bot', reply);
+    } else {
+      appendMessage('bot', 'My apologies — the Arc Reactor seems to be interfering with my signal. Please try again.');
+    }
+  } catch (err) {
+    removeTyping();
+    appendMessage('bot', 'Communication disruption detected. Even Stark tech has its limits. Please try again shortly.');
+  }
+
+  isBotTyping = false;
+  chatSend.disabled = false;
+  chatInput.focus();
+}
+
 function typeWriter(element, text, speed = 60) {
   let i = 0;
   element.textContent = '';
